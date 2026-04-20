@@ -1,4 +1,4 @@
-import type { Customer, Order, Product } from "./types.js";
+import type { Order, Product } from "./types.js";
 
 function orderTotal(order: Order): number {
 	return order.lineItems.reduce((total, lineItem) => {
@@ -55,3 +55,22 @@ const order: Order = {
 console.log(orderTotal(order));
 console.log(formatOrder(order));
 console.log(isInStock(products[0]));
+
+interface User {
+	id: number;
+	name: string;
+	username: string;
+	email: string;
+}
+
+async function fetchAllUsers(url: string): Promise<User[]> {
+	const response = await fetch(url);
+	const data = await response.json();
+
+	return data as User[];
+}
+
+const users = await fetchAllUsers("https://jsonplaceholder.typicode.com/users");
+
+console.log(users[0].name);
+console.log(users[0].age); // Compiler error - User interface has no 'age' property
