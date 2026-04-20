@@ -118,3 +118,35 @@ const charCount = document.getElementById("charCount") as HTMLParagraphElement;
 textArea.addEventListener("input", () => {
 	charCount.textContent = `${textArea.value.length} characters`;
 });
+
+const todoInput = document.getElementById("todoInput") as HTMLInputElement;
+const addTodoBtn = document.getElementById("addTodoBtn") as HTMLButtonElement;
+const todoList = document.getElementById("todoList") as HTMLUListElement;
+
+function createTodoItem(todo: string) {
+	const li = document.createElement("li");
+
+	const checkbox = document.createElement("input");
+	checkbox.type = "checkbox";
+	checkbox.addEventListener("change", () => {
+		li.style.textDecoration = checkbox.checked ? "line-through" : "none";
+	});
+
+	const deleteBtn = document.createElement("button");
+	deleteBtn.textContent = "Delete";
+	deleteBtn.addEventListener("click", () => {
+		li.remove();
+	});
+
+	const text = document.createElement("span");
+	text.textContent = todo;
+
+	li.append(checkbox, text, deleteBtn);
+	return li;
+}
+
+addTodoBtn.addEventListener("click", () => {
+	const todoItem = createTodoItem(todoInput.value);
+	todoList.appendChild(todoItem);
+	todoInput.value = "";
+});
