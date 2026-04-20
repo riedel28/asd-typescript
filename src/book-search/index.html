@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Book Search</title>
+  </head>
+  <body>
+    <h1>Book Search</h1>
+    <form id="search-form">
+      <input name="query" type="text" placeholder="Enter a book title" />
+      <button>Search</button>
+    </form>
+    <ul id="book-list"></ul>
+
+    <hr/>
+
+    <h1>
+      Update Text on Button Click
+    </h1>
+    <button id="helloBtn">Say Hello</button>
+    <p id="output"></p>
+
+    <hr/>
+
+    <h1>
+      Input and Display
+    </h1>
+    <input name="name" type="text" id="nameInput" placeholder="Enter name" />
+    <button id="submitBtn">Submit</button>
+    <p id="displayName">Hello</p>
+
+    <hr/>
+
+    <h1>Toggle Visibility</h1>
+    <button id="toggleBtn">Toggle</button>
+    <p id="hiddenText">Now you see me</p>
+
+     <hr/>
+
+    <h1>Add items to List</h1>
+    <input type="text" id="itemInput" />
+    <button id="addBtn">Add Item</button>
+    <ul id="itemList"></ul>
+
+    <hr/>
+
+    <h1>Counter</h1>
+    <button id="decreaseBtn">-</button>
+    <span id="counter">0</span>
+    <button id="increaseBtn">+</button>
+
+    <hr/>
+    <h1>Change background color</h1>
+    <select id="colorSelect">
+      <option value="white">White</option>
+      <option value="lightblue">Light Blue</option>
+      <option value="lightgreen">Light Green</option>
+    </select>
+    <div
+    id="colorBox"
+    style="width:100px; height:100px; border:1px solid black;"
+></div>
+
+
+    <hr/>
+    <h1>Character count</h1>
+    <textarea id="textInput"></textarea>
+    <p id="charCount">0 characters</p>
+  </body>
+
+  <script type="module" src="src/main.ts" ></script>
+</html>
