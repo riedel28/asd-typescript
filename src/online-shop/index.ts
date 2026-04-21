@@ -70,7 +70,12 @@ async function fetchAllUsers(url: string): Promise<User[]> {
 	return data as User[];
 }
 
-const users = await fetchAllUsers("https://jsonplaceholder.typicode.com/users");
-
-console.log(users[0].name);
-console.log(users[0].age); // Compiler error - User interface has no 'age' property
+async function main() {
+	const users = await fetchAllUsers(
+		"https://jsonplaceholder.typicode.com/users",
+	);
+	console.log(users[0].name);
+	console.log(users[0].username);
+	console.log(users[0].email);
+}
+main();

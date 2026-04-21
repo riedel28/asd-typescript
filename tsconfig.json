@@ -9,11 +9,16 @@
       "dom"
     ],
     "types": [],
-    "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "resolveJsonModule": true,
-    "sourceMap": true
+    "sourceMap": true,
+    // coding rules
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true
   },
   "include": [
     "src/**/*"
