@@ -1,29 +1,19 @@
-import { formatId } from "./types.js";
-import type { Track, FeaturedTrack } from "./types.js";
-
-const libraryName = "Late Night Listening";
-
-function describeTrack(title: string, artist: string): string {
-	return `${title} by ${artist}`;
+interface SuperheroData {
+	superheroes: string[];
 }
 
-const tracks: Track[] = [
-	{ id: 1, title: "Blue Light", artist: "Jorga Smith", liked: true },
-	{ id: 2, title: "Nights", artist: "Frank Ocean", liked: false },
-];
+import marvelData from "./superheroes.json";
 
-const pick: FeaturedTrack = {
-	id: 3,
-	title: "Golden",
-	artist: "Jill Scott",
-	liked: true,
-	curatedBy: "editorial",
-	addedDate: "2024-01-15",
-};
+function logSuperheroCount(data: SuperheroData): void {
+	const count = data.superheroes.length;
 
-console.log(`Library: ${libraryName}`);
-console.log(describeTrack(tracks[0].title, tracks[0].artist));
-tracks.forEach((t) => {
-	console.log(formatId(t.id));
-});
-console.log(`Featured: ${pick.title} — added ${pick.addedDate}`);
+	console.log(`--- Marvel Data Summary ---`);
+	console.log(`Total Superheroes Found: ${count}`);
+	console.log(`---------------------------`);
+
+	data.superheroes.forEach((superhero) => {
+		console.log(`- ${superhero}`);
+	});
+}
+
+logSuperheroCount(marvelData);
