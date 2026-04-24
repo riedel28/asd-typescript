@@ -1,0 +1,22 @@
+{
+	"name": "recap-project-1",
+	"version": "1.0.0",
+	"description": "This is the template repository for the recap project 1. It contains the source code for the IT-Book Library application. Take a look into the `./src` directory. You will find the basic HTML for your application as well as CSS for some styling.",
+	"license": "ISC",
+	"author": "",
+	"type": "module",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"client": "bun src/index.html",
+		"server": "bookmonkey-api",
+		"dev": "concurrently \"bun run client\" \"bun run server\""
+	},
+	"dependencies": {
+		"bookmonkey-api": "^3.2.0",
+		"tsx": "^4.21.0"
+	},
+	"devDependencies": {
+		"concurrently": "^9.2.1"
+	}
+}
