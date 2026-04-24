@@ -1,11 +1,13 @@
-import type { Book, FetchBooksPayload } from "../types/book.js";
+import type { Book } from "../types/book.js";
 
-export async function fetchBooks(options: FetchBooksPayload): Promise<Book[]> {
+export async function fetchBooks({
+	title,
+	publisher,
+}: Pick<Partial<Book>, "title" | "publisher"> = {}): Promise<Book[]> {
 	const url = new URL("http://localhost:4730/books");
-	const { query, publisher } = options;
 
-	if (query) {
-		url.searchParams.set("title_like", query);
+	if (title) {
+		url.searchParams.set("title_like", title);
 	}
 
 	if (publisher) {

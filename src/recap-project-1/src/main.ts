@@ -1,4 +1,4 @@
-import type { Book } from "../types/book";
+import type { Book } from "../types/book.js";
 
 const tbody = document.querySelector("tbody") as HTMLTableSectionElement;
 const searchInput = document.getElementById("search") as HTMLInputElement;
@@ -63,15 +63,15 @@ async function main() {
 	tbody.innerHTML = books.map(renderBookRow).join("");
 
 	searchInput.addEventListener("input", async (event) => {
-		const query = (event.target as HTMLInputElement).value;
-		const books = await fetchBooks(query);
+		const title = (event.target as HTMLInputElement).value;
+		const books = await fetchBooks({ title });
 
 		tbody.innerHTML = books.map(renderBookRow).join("");
 	});
 
 	publisherSelect.addEventListener("change", async (event) => {
 		const publisher = (event.target as HTMLSelectElement).value;
-		const books = await fetchBooks(publisher);
+		const books = await fetchBooks({ publisher });
 		tbody.innerHTML = books.map(renderBookRow).join("");
 	});
 
