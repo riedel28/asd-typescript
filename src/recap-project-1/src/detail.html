@@ -32,10 +32,10 @@
           <div class="column"><p class="logo">IT.Book.Library</p></div>
           <div class="column">
             <nav class="mainnav">
-              <a href="index.html" class="mainnav-link mainnav-link--active"
+              <a href="index.html" data-nav="books" class="mainnav-link mainnav-link--active"
                 >Books</a
               >
-              <a href="favorite.html" class="mainnav-link"
+              <a href="index.html?view=favorites" data-nav="favorites" class="mainnav-link"
                 >Favorites <span class="mainnav-number">2</span></a
               >
             </nav>
@@ -45,13 +45,13 @@
     </header>
     <main class="container">
       <h1>
-        Java Web Scraping Handbook<br />
-        <small>Learn advanced Web Scraping techniques</small>
+        <span id="book-title">Java Web Scraping Handbook</span><br />
+        <small id="book-subtitle">Learn advanced Web Scraping techniques</small>
       </h1>
       <section class="row">
         <div class="column column-67">
           <h3>Abstract</h3>
-          <p>
+          <p id="book-abstract">
             Web scraping or crawling is the art of fetching data from a third
             party website by downloading and parsing the HTML code to extract
             the data you want. It can be hard. From bad HTML code to heavy
@@ -61,9 +61,9 @@
 
           <h4>Details</h4>
           <ul>
-            <li><strong>Author:</strong> Kevin Sahin</li>
-            <li><strong>Publisher:</strong> Leanpub</li>
-            <li><strong>Pages:</strong> 115</li>
+            <li><strong>Author:</strong> <span id="book-author">Kevin Sahin</span></li>
+            <li><strong>Publisher:</strong> <span id="book-publisher">Leanpub</span></li>
+            <li><strong>Pages:</strong> <span id="book-pages">115</span></li>
           </ul>
 
           <button
@@ -74,9 +74,10 @@
           </button>
         </div>
         <div class="column column-33">
-          <img src="images/1001606140805.png" alt="" />
+          <img id="book-cover" src="images/1001606140805.png" alt="Book cover" />
         </div>
       </section>
     </main>
+    <script type="module" src="detail.ts"></script>
   </body>
 </html>

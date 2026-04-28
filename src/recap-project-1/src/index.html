@@ -32,10 +32,10 @@
           <div class="column"><p class="logo">IT.Book.Library</p></div>
           <div class="column">
             <nav class="mainnav">
-              <a href="index.html" class="mainnav-link mainnav-link--active"
+              <a href="index.html" data-nav="books" class="mainnav-link mainnav-link--active"
                 >Books</a
               >
-              <a href="favorite.html" class="mainnav-link"
+              <a href="index.html?view=favorites" data-nav="favorites" class="mainnav-link"
                 >Favorites <span class="mainnav-number">2</span></a
               >
             </nav>
@@ -65,12 +65,12 @@
           <table>
             <thead>
               <tr>
-                <th class="first-col">&nbsp;</th>
+                <th class="first-col">Favorite</th>
                 <th>Title</th>
                 <th>ISBN</th>
                 <th>Author</th>
                 <th>Publisher</th>
-                <th>&nbsp;</th>
+                <th>Actions</th>
               </tr>
             </thead>
             <tbody>
